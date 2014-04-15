@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+     <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    
+
+    <form action="/parentList" method="post">
+        <input type="hidden" name="Operation" value="Add" />
+        <div>Your name here: <input type="text" name="name" > </div>
+        <div>Your address here: <input type="text" name="addr" > </div>
+        Babies (0-1)  <select name='Baby' id='Baby' size="3">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3+</option>
+                </select>  
+                Toddler (1-4) <select name='Toddler' id='Toddler' size="3">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3+</option>
+                </select>   
+                Kids (5-10) <select name='Kids' id='Kids' size="3">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3+</option>
+                </select> 
+                Teenagers (10+) <select name='Teenagers' id='Teenagers' size="3">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3+</option>
+                </select>
+        Description:
+        <div><textarea name="desc" rows="3" cols="60"></textarea></div>
+        <div><input type="submit" value="signup sitter"></div>
+    </form>
+
+
+  </body>
+</html>

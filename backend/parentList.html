@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+{% autoescape true %}
+<html>
+     <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <form action="/parentList" method="post">
+        <input type="hidden" name="Operation" value="Filter" /> 
+        <input type="submit" value="Filter">
+    </form>
+    {% for parent in parents %}
+        <b>Name: {{ parent.name }}</b> </br>
+        <b> Member since </b> : {{ parent.signupDate }} </br>
+        <b> Listed addr: </b> : {{ parent.addr }} </br>
+        <b> Parents ages: </b> : 
+            Babies : {{ parent.baby }} </br>
+            Toddlers : {{ parent.toddler }} </br>
+            Kids : {{ parent.kid }} </br>
+            Teenagers : {{ parent.teenager }} </br>
+        Description: <blockquote>{{ parent.desc }}</blockquote>
+        </br>
+    {% endfor %}
+    
+    <blockquote> TEMPLATING  </blockquote>
+
+  </body>
+</html>
+{% endautoescape %}

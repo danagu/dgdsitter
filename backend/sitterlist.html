@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+{% autoescape true %}
+<html>
+     <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <form action="/sitterList" method="post">
+        <input type="hidden" name="Operation" value="Filter" />
+        <input type="radio" name="gender" value="male" > Male
+        <input type="radio" name="gender" value="female" > Female
+        <input type="checkbox" name="ages" value="Babies">Babies (0-1) 
+        <input type="checkbox" name="ages" value="Toddlers">Toddler (1-4) 
+        <input type="checkbox" name="ages" value="Kids">Kids (5-10) 
+        <input type="checkbox" name="ages" value="Teenagers">Teenagers (10+) 
+        <input type="submit" value="Filter">
+    </form>
+    {% for sitter in sitters %}
+        <b>Name: {{ sitter.name }}</b> </br>
+        <b><i>Age: {{ sitter.age}}</i></b>  </br>
+        <b> Gender </b> : {% if sitter.gender %} Male {% else %} Female  {% endif %}
+        <b> Member since </b> : {{ sitter.signupDate }} </br>
+        <b> Listed addr: </b> : PLACEHOLDER </br>
+        <b> The preferred ages: </b> : 
+            {% for age in sitter.preferredAges %} 
+                {{ age }}
+            {% endfor %}
+            </br>
+        Description: <blockquote>{{ sitter.desc }}</blockquote>
+        </br>
+    {% endfor %}
+    
+    <blockquote> I SILLY LOVE THIS  </blockquote>
+
+  </body>
+</html>
+{% endautoescape %}
